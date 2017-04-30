@@ -5,21 +5,26 @@
   <body>
     <script>
       function convertAmount(amount, currentType="pesos", convertType="dollar"){
-        amount = amount.toFixed(2);
-        if(currentType=="pesos" && convertType=="dollar"){}
-
+        let amount_converted = 0;
+        if(currentType=="pesos" && convertType=="dollar"){
+          amount_converted = amount * conversion_dollar(currentType, convertType);
+        }
+        let amount_money = amount_converted.toFixed(2);
+        return amount_money;
       }
 
       function conversion_dollar(start, end){
-        if(start.toLower()=="pesos"){
-          let out = 50.0;
+        let out = 0;
+        if(start=="pesos"){
+          out = 50.0;
         }
         return out
       }
 
       price = prompt("Insert Price to Convert:");
 
-      convertAmount(price, "pesos", "dollar");
+      converted = convertAmount(price, "pesos", "dollar");
+      document.write(converted);
     </script>
   </body>
 
