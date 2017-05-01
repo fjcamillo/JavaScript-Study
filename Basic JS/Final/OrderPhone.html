@@ -37,8 +37,6 @@
         function buy_phone(cash, price, accessory, onhandphone, onhandaccessory){
 
           if(cash<price){
-            // let ty = [onhandphone, onhandaccessory, cash];
-            // return ty;
             console.log("On Hand Phone: "+onhandphone);
             let fin = {
               "onhandphone": onhandphone,
@@ -56,13 +54,15 @@
             cash -= accessory;
             onhandaccessory += 1;
           }
+
           console.log(cash);
-          buy_phone(cash, price, accessory, onhandphone, onhandaccessory);
+          return buy_phone(cash, price, accessory, onhandphone, onhandaccessory);
 
         }
 
         var compute_results = buy_phone(cash_on_hand, phone_price, accessory_price, 0, 0);
         console.log(typeof compute_results);
+
         document.write("Number of Phones: "+compute_results["onhandphone"]+",Number of Accessory: "+compute_results.onhandaccessory+",Change: "+compute_results.change);
 
       }
