@@ -1,0 +1,27 @@
+<html>
+
+
+<head></head>
+
+<body>
+  <script>
+    function makeAdder(x){
+
+      function add(y){
+        return x + y;
+      }
+
+      return add;
+    }
+
+    let plusOne = makeAdder(1);
+    let plusTen = makeAdder(10);
+
+    document.write(plusOne(10));
+    document.write("<br>");
+    document.write(plusTen(10));
+
+  </script>
+</body>
+
+</html>
