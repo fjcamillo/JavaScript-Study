@@ -1,0 +1,35 @@
+<html>
+<head></head>
+<body>
+
+  <script>
+      function student(){
+        let student_name, student_number, student_password;
+
+        function enterSIS(name, number, password){
+          student_name = name;
+          student_number = number;
+          student_password = password;
+
+          document.write(student_name + "<br>");
+          document.write(student_number + "<br>");
+          document.write(student_password + "<br>");
+        }
+
+        let sisAPI = {
+          enter: enterSIS
+        };
+
+        return sisAPI;
+
+
+      }
+
+      let studentOne = student();
+
+      studentOne.enter("Francisc", "2012-01236-MN-0", "123456");
+  </script>
+
+</body>
+
+</html>

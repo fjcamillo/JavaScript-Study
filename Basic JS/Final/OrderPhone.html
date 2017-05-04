@@ -1,0 +1,92 @@
+<html>
+
+  <head>
+    <script>
+
+      function compute_priced_tax(price, tax=0.12, debug=false){
+        let tax_rated = price+price*tax;
+        if(debug==true){
+          console.log("Tax Rated: " + tax_rated);
+        }
+        return tax;
+      }
+
+      function compute(debug=false){
+        const name = document.Samsung.owner.value;
+        let cash_on_hand = document.Samsung.cash.value;
+        const tax_rate = document.Samsung.tax.value;
+        let phone_price = document.Samsung.price.value;
+        let accessory_price = document.Samsung.accessory.value;
+        let threshold = document.Samsung.threshold.value;
+
+        if(debug==true){
+          console.log("Name of Customer: " + name);
+          console.log("Cash on Hand of Customer: " + cash_on_hand);
+          console.log("Tax Rate: " + tax_rate);
+          console.log("Phone Price: " + phone_price);
+          console.log("Accessory Price: "+ accessory_price);
+          console.log("Threshold: "+threshold);
+        }
+
+        //Goal is to show how many phones can the user buy with the current cash
+
+        let actual_phone_price = compute_priced_tax(phone_price, tax_rate);
+        let accessory_actual_price = compute_priced_tax(accessory_price, tax_rate);
+
+        //recursive way of computing phones
+        function buy_phone(cash, price, accessory, onhandphone, onhandaccessory){
+
+          if(cash<price){
+            console.log("On Hand Phone: "+onhandphone);
+            let fin = {
+              "onhandphone": onhandphone,
+              "onhandaccessory":onhandaccessory,
+              "change":cash
+            };
+            console.log(fin);
+            return fin;
+          }
+
+          cash -= price;
+          onhandphone += 1;
+
+          if(cash>=accessory){
+            cash -= accessory;
+            onhandaccessory += 1;
+          }
+
+          console.log(cash);
+          return buy_phone(cash, price, accessory, onhandphone, onhandaccessory);
+
+        }
+
+        var compute_results = buy_phone(cash_on_hand, phone_price, accessory_price, 0, 0);
+        console.log(typeof compute_results);
+
+        document.write("Number of Phones: "+compute_results["onhandphone"]+",Number of Accessory: "+compute_results.onhandaccessory+",Change: "+compute_results.change);
+
+      }
+
+
+    </script>
+  </head>
+
+  <body>
+
+    <form name="Samsung">
+      Name: <input type="text" name="owner"><br>
+      Cash On-Hand: <input type="text" name="cash"><br>
+      Tax Rate: <input type="text" name="tax"><br>
+      Phone Price: <input type="text" name="price"><br>
+      Accessory Price: <input type="text" name="accessory"><br>
+      Threshold: <input type="text" name="threshold"><br>
+      <input type="button" name="count" onclick="compute()" value="Click Me">
+    </form>
+
+    <script>
+
+
+    </script>
+  </body>
+
+</html>
