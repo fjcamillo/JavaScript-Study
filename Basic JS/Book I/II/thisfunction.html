@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+  </head>
+
+  <body>
+
+    <script>
+      function foo(){
+        console.log(this.bar);
+      }
+
+      var obj1 = {
+        foo: foo,
+        bar: "object1"
+      };
+
+      var obj2 = {
+        bar: 24
+      };
+
+      foo();
+      obj1.foo();
+      foo.call(obj2);
+      new foo();
+    </script>
+
+  </body>
+</html>

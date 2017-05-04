@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+
+  <script>
+  let foo = {
+    a: 42
+  };
+
+  let bar = Object.create(foo);
+  bar.b = 43;
+
+  console.log(bar.a);
+  console.log(bar.b);
+
+  //foo doesn't know about the object b
+  console.log(foo.b);
+
+  </script>
+
+</body>
+
+
+
+
+</head>
