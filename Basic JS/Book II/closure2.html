@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+
+  for(var i = 0; i<=5; i++){
+    var j = i;
+    setTimeout(
+      function timer(){
+        console.log(j);
+      }, i*1000);
+
+      //The for loop will log 5 six times.
+      /* This is because
+      1. The for loop was invoked 6 times, i = 0 up to i = 5
+      2. The last value of i that was true for the for loop was 5
+
+      */
+  }
+
+</script>
+
+</body>
+
+</html>
