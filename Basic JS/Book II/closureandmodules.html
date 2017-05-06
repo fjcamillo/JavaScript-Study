@@ -1,0 +1,46 @@
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+  function car(){
+    let honda, toyota, tesla;
+
+    function isHonda(name){
+      honda = "Honda: " + name;
+      console.log(honda);
+    }
+
+    function isToyota(name){
+      toyota = "Toyota: " + name;
+      console.log(toyota);
+    }
+
+    function isTesla(name){
+      tesla = "Tesla: " + name;
+      console.log(tesla);
+    }
+
+    let isChoice  = {
+      isHonda: isHonda,
+      isToyota: isToyota,
+      isTesla: isTesla
+    };
+
+    return isChoice;
+
+  }
+
+  let nameCar = car();
+
+  nameCar.isHonda("Hondy");
+  nameCar.isToyota("Toyi");
+  nameCar.isTesla("Elon Musk");
+
+</script>
+
+</body>
+
+</html>
