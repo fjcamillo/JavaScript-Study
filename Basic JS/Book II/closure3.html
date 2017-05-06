@@ -1,0 +1,26 @@
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+
+  for(let i = 0; i<=5; i++){
+    setTimeout(function timer(){console.log(i);}, i*1000);
+  }
+
+  /*
+  Creates a different output everytime, we are taking advantage of the property of let
+  1. let casts the variable name everytime the for loop was fired, so in this example the for loop fired six times, chaging
+  the value of i from 0 - 5, with every value casted individually
+
+  The output for this function is
+  0, 1, 2, 3, 4, 5
+  */
+
+</script>
+
+</body>
+
+</html>
