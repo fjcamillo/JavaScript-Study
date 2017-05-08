@@ -6,8 +6,20 @@
 
 <script>
 
-  
+  function foo(){
+    console.log(this.a);
+  }
 
+  let bar  = {
+    a: 2,
+    foo: foo
+  };
+
+  document.write("Invoking bar.foo: <br>");
+  document.write(bar.foo + "<br>");
+
+  document.write("Invoking foo(): <br>");
+  document.write(foo());
 </script>
 
 </body>
