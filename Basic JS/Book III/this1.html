@@ -10,19 +10,21 @@
     console.log(this.a);
   }
 
-  var bar  = {
-    a: 2,
-    foo: foo
-  };
+  let obj1 = {
+      a: 1,
+      foo: foo
+  }
 
-  var a = 3;
+  let obj2 = {
+      a:2
+  }
 
-  document.write("Invoking bar.foo: <br>");
-  bar.foo(); //returns the value of a from within the call site bar
+  obj1.foo(); //returns the value of the a within the obj1 call stack
+  foo.call(obj2);
+  //returns the value of the a within obj2 call stack due to the .call() method. Even if the function is called
+  //on the global call stack
 
-  document.write("Invoking foo(): <br>");
-  foo(); //returns the value of a from within the global call stack
-  
+
 </script>
 
 </body>

@@ -1,0 +1,32 @@
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+
+function foo(){
+  console.log(this.a);
+}
+
+let object1 = {
+  a: 1,
+  b: 1,
+  foo:foo
+}
+
+let objec2 = {
+  a:2,
+  b:2
+}
+
+var caller = new foo();
+object1.foo();
+object1.caller();
+
+</script>
+
+</body>
+
+</html>
