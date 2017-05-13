@@ -6,6 +6,19 @@
 
 <script>
 
+var announcement = {
+  morning: function morn() {console.log("Good Morning.")},
+  evening: function eve() {console.log("Good Evening")}
+};
+
+var bar = Object.create(announcement);
+
+bar.morning();
+bar.evening();
+
+announcement.morning();
+announcment.morn(); //This will return undefine
+
 </script>
 
 </body>
