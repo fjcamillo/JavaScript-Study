@@ -17,8 +17,13 @@
   }
 
   var cars = {
-    id
+    id: function id(conduction){console.log(this.conduction);},
+    plate: function plate(number){console.log(this.number);}
   };
+
+  var jeepney = Object.create(philippines);
+  var lotus = jeepney("Lotus");
+  console.log(lotus);
 
 </script>
 
