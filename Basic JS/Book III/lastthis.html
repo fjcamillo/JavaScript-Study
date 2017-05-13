@@ -10,20 +10,37 @@
     this.creator = name;
 
     function isCreator(){
-      return this.creator;
+      console.log(this.creator);
     }
 
-    return isCreator();
+    console.log(this.creator);
+
+    // return isCreator();
   }
+
+    function america(name){
+      this.creator = name;
+
+      function isCreator(){
+        console.log(this.creator);
+      }
+
+      // return isCreator();
+    }
 
   var cars = {
     id: function id(conduction){console.log(this.conduction);},
     plate: function plate(number){console.log(this.number);}
   };
 
-  var jeepney = Object.create(philippines);
-  var lotus = jeepney("Lotus");
-  console.log(lotus);
+  var creator = {
+    philippines: philippines,
+    america: america
+  };
+
+  var jeepney = Object.create(creator);
+  var lotus = jeepney.philippines("Jeepney Pasig");
+
 
 </script>
 
