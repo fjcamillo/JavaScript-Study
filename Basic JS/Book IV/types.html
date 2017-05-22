@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+
+  function positive(value, exponent){
+    return Math.pow(value, exponent);
+  }
+
+  function negative(value, exponent){
+    let out = value*-1;
+    return Math.pow(out, exponent);
+  }
+
+  let trial = negative(2, 2);
+  console.log(trial);
+
+  let pos = positive(2, 32);
+  console.log(pos);
+
+</script>
+
+</body>
+
+</html>
